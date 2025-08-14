@@ -1,0 +1,222 @@
+[
+  {
+    "id": 1,
+    "country": "Japan",
+    "name": "Niseko Tokyu Grand Hirafu",
+    "lat": 42.86646489,
+    "lng": 140.7005861,
+    "difficulty": "Advanced",
+    "price": 46,
+    "info": "Powder heaven in Hokkaido.",
+    "ticket_url": "https://www.grand-hirafu.jp/en/"
+  },
+  {
+    "id": 2,
+    "country": "Japan",
+    "name": "Hakuba Happo-One",
+    "lat": 36.70213891,
+    "lng": 137.8369661,
+    "difficulty": "Advanced",
+    "price": 55,
+    "info": "Nagano Olympic venue.",
+    "ticket_url": "https://www.happo-one.jp/en/"
+  },
+  {
+    "id": 3,
+    "country": "France",
+    "name": "Chamonix-Mont-Blanc",
+    "lat": 45.92318335,
+    "lng": 6.869696045,
+    "difficulty": "Advanced",
+    "price": 87,
+    "info": "Extreme terrain by Mont Blanc.",
+    "ticket_url": "https://en.chamonix.com/activities/winter/skiing"
+  },
+  {
+    "id": 4,
+    "country": "France",
+    "name": "Courchevel 1850",
+    "lat": 45.41630589,
+    "lng": 6.634492637,
+    "difficulty": "Intermediate",
+    "price": 88,
+    "info": "Largest linked ski area.",
+    "ticket_url": "https://courchevel.com/en/"
+  },
+  {
+    "id": 5,
+    "country": "Switzerland",
+    "name": "Zermatt (Matterhorn)",
+    "lat": 45.98444356,
+    "lng": 7.6585903,
+    "difficulty": "Intermediate",
+    "price": 110,
+    "info": "Year-round glacier skiing.",
+    "ticket_url": "https://www.matterhornparadise.ch/en/"
+  },
+  {
+    "id": 6,
+    "country": "Austria",
+    "name": "Ski Arlberg",
+    "lat": 47.13438968,
+    "lng": 10.26507073,
+    "difficulty": "Advanced",
+    "price": 91,
+    "info": "Birthplace of modern skiing.",
+    "ticket_url": "https://www.skiarlberg.at/en"
+  },
+  {
+    "id": 7,
+    "country": "USA",
+    "name": "Vail Ski Resort",
+    "lat": 39.61158317,
+    "lng": -106.3541615,
+    "difficulty": "Intermediate",
+    "price": 142,
+    "info": "Colossal Colorado resort.",
+    "ticket_url": "https://www.vail.com/"
+  },
+  {
+    "id": 8,
+    "country": "USA",
+    "name": "Jackson Hole Ski Area",
+    "lat": 43.59746243,
+    "lng": -110.8464905,
+    "difficulty": "Advanced",
+    "price": 110,
+    "info": "Steep & deep legend.",
+    "ticket_url": "https://www.jacksonhole.com/"
+  },
+  {
+    "id": 9,
+    "country": "Canada",
+    "name": "Whistler Blackcomb",
+    "lat": 50.11523563,
+    "lng": -122.9484543,
+    "difficulty": "Intermediate",
+    "price": 112,
+    "info": "Largest in North America.",
+    "ticket_url": "https://www.whistlerblackcomb.com/"
+  },
+  {
+    "id": 10,
+    "country": "China",
+    "name": "Wanlong Ski Resort",
+    "lat": 40.97072819,
+    "lng": 115.3980297,
+    "difficulty": "Intermediate",
+    "price": 97,
+    "info": "High-quality groomers near Beijing.",
+    "ticket_url": "https://chonglihuaxue.cn/"
+  },
+  {
+    "id": 11,
+    "country": "Italy",
+    "name": "Cortina d'Ampezzo",
+    "lat": 46.53831026,
+    "lng": 12.1349293,
+    "difficulty": "Intermediate",
+    "price": 73,
+    "info": "Dolomites queen.",
+    "ticket_url": "https://www.dolomitisuperski.com/en/"
+  },
+  {
+    "id": 12,
+    "country": "Andorra",
+    "name": "Grandvalira",
+    "lat": 42.57886548,
+    "lng": 1.646414656,
+    "difficulty": "Beginner",
+    "price": 68,
+    "info": "Family-friendly Pyrenees.",
+    "ticket_url": "https://www.grandvalira.com/"
+  },
+  {
+    "id": 13,
+    "country": "New Zealand",
+    "name": "Cardrona Alpine Resort",
+    "lat": -44.8730928,
+    "lng": 168.9487645,
+    "difficulty": "Intermediate",
+    "price": 179,
+    "info": "Popular family-friendly resort with great terrain parks.",
+    "ticket_url": "https://cardrona-treblecone.com"
+  },
+  {
+    "id": 14,
+    "country": "Chile",
+    "name": "Portillo",
+    "lat": -32.83544134,
+    "lng": -70.12908796,
+    "difficulty": "Advanced",
+    "price": 68,
+    "info": "Legendary South American resort with stunning Andean views.",
+    "ticket_url": "https://skiportillo.com/"
+  },
+  {
+    "id": 15,
+    "country": "Sweden",
+    "name": "SkiStar Åre",
+    "lat": 63.40317937,
+    "lng": 13.0760794,
+    "difficulty": "Intermediate",
+    "price": 74,
+    "info": "Largest ski resort in Scandinavia with vibrant village life.",
+    "ticket_url": "https://www.skistar.com/en/are/"
+  },
+  {
+    "id": 16,
+    "country": "Spain",
+    "name": "Baqueira-Beret",
+    "lat": 42.70178051,
+    "lng": 0.947092696,
+    "difficulty": "Intermediate",
+    "price": 112,
+    "info": "Top Spanish Pyrenees resort with excellent snow record.",
+    "ticket_url": "https://www.baqueira.es/"
+  },
+  {
+    "id": 17,
+    "country": "Norway",
+    "name": "SkiStar Trysil",
+    "lat": 61.30680045,
+    "lng": 12.24279191,
+    "difficulty": "Beginner",
+    "price": 70,
+    "info": "Norway's largest ski area, perfect for families and beginners.",
+    "ticket_url": "https://www.skistar.com/en/trysil/"
+  },
+  {
+    "id": 18,
+    "country": "South Korea",
+    "name": "Yongpyong Resort",
+    "lat": 37.64377123,
+    "lng": 128.6807391,
+    "difficulty": "Intermediate",
+    "price": 89,
+    "info": "Host of Winter Olympics events, well-groomed slopes.",
+    "ticket_url": "https://www.yongpyong.co.kr/eng/skiNboard/"
+  },
+  {
+    "id": 19,
+    "country": "Australia",
+    "name": "Perisher Ski Resort",
+    "lat": -36.40094448,
+    "lng": 148.4113433,
+    "difficulty": "Intermediate",
+    "price": 165,
+    "info": "Largest ski resort in the Southern Hemisphere.",
+    "ticket_url": "https://www.perisher.com.au"
+  },
+  {
+    "id": 20,
+    "country": "Russia",
+    "name": "Rosa Khutor",
+    "lat": 43.65916659,
+    "lng": 40.31976606,
+    "difficulty": "Advanced",
+    "price": 70,
+    "info": "Sochi 2014 Olympic venue with modern lifts and facilities.",
+    "ticket_url": "https://www.rosaski.com/"
+  }
+]

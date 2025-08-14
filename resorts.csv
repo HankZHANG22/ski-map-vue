@@ -1,0 +1,21 @@
+id,country,name,lat,lng,difficulty,price,info,ticket_url
+1,Japan,Niseko Tokyu Grand Hirafu,42.86646489,140.7005861,Advanced,46,Powder heaven in Hokkaido.,https://www.grand-hirafu.jp/en/
+2,Japan,Hakuba Happo-One,36.70213891,137.8369661,Advanced,55,Nagano Olympic venue.,https://www.happo-one.jp/en/
+3,France,Chamonix-Mont-Blanc,45.92318335,6.869696045,Advanced,87,Extreme terrain by Mont Blanc.,https://en.chamonix.com/activities/winter/skiing
+4,France,Courchevel 1850,45.41630589,6.634492637,Intermediate,88,Largest linked ski area.,https://courchevel.com/en/
+5,Switzerland,Zermatt (Matterhorn),45.98444356,7.6585903,Intermediate,110,Year-round glacier skiing.,https://www.matterhornparadise.ch/en/
+6,Austria,Ski Arlberg,47.13438968,10.26507073,Advanced,91,Birthplace of modern skiing.,https://www.skiarlberg.at/en
+7,USA,Vail Ski Resort,39.61158317,-106.3541615,Intermediate,142,Colossal Colorado resort.,https://www.vail.com/
+8,USA,Jackson Hole Ski Area,43.59746243,-110.8464905,Advanced,110,Steep & deep legend.,https://www.jacksonhole.com/
+9,Canada,Whistler Blackcomb,50.11523563,-122.9484543,Intermediate,112,Largest in North America.,https://www.whistlerblackcomb.com/
+10,China,Wanlong Ski Resort,40.97072819,115.3980297,Intermediate,97,High-quality groomers near Beijing.,https://chonglihuaxue.cn/
+11,Italy,Cortina d'Ampezzo,46.53831026,12.1349293,Intermediate,73,Dolomites queen.,https://www.dolomitisuperski.com/en/
+12,Andorra,Grandvalira,42.57886548,1.646414656,Beginner,68,Family-friendly Pyrenees.,https://www.grandvalira.com/
+13,New Zealand,Cardrona Alpine Resort,-44.8730928,168.9487645,Intermediate,179,Popular family-friendly resort with great terrain parks.,https://cardrona-treblecone.com
+14,Chile,Portillo,-32.83544134,-70.12908796,Advanced,68,Legendary South American resort with stunning Andean views.,https://skiportillo.com/
+15,Sweden,SkiStar Åre,63.40317937,13.0760794,Intermediate,74,Largest ski resort in Scandinavia with vibrant village life.,https://www.skistar.com/en/are/
+16,Spain,Baqueira-Beret,42.70178051,0.947092696,Intermediate,112,Top Spanish Pyrenees resort with excellent snow record.,https://www.baqueira.es/
+17,Norway,SkiStar Trysil,61.30680045,12.24279191,Beginner,70,"Norway's largest ski area, perfect for families and beginners.",https://www.skistar.com/en/trysil/
+18,South Korea,Yongpyong Resort,37.64377123,128.6807391,Intermediate,89,"Host of Winter Olympics events, well-groomed slopes.",https://www.yongpyong.co.kr/eng/skiNboard/
+19,Australia,Perisher Ski Resort,-36.40094448,148.4113433,Intermediate,165,Largest ski resort in the Southern Hemisphere.,https://www.perisher.com.au
+20,Russia,Rosa Khutor,43.65916659,40.31976606,Advanced,70,Sochi 2014 Olympic venue with modern lifts and facilities.,https://www.rosaski.com/
