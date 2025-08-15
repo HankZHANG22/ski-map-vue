@@ -11,7 +11,7 @@ const TS_OUT = resolve('./src/data/resorts.ts')
 if (!existsSync(CSV)) {
   console.error(`❌ resorts.csv not found at ${CSV}
 Expected header:
-id,country,name,lat,lng,difficulty,price,info,ticket_url,green,red,black`)
+id,country,name,lat,lng,difficulty,price,info,ticket_url,green,blue,red,black`)
   process.exit(1)
 }
 
@@ -30,9 +30,12 @@ let skipped = 0
 const resorts = rows
   .map((r, i) => {
     // Parse trails data (optional, default to 0)
-    const trails = { green: 0, red: 0, black: 0 }
+    const trails = { green: 0, blue: 0, red: 0, black: 0 }
     if (r.green && Number.isFinite(Number(r.green)) && Number(r.green) >= 0) {
       trails.green = Number(r.green)
+    }
+    if (r.blue && Number.isFinite(Number(r.blue)) && Number(r.blue) >= 0) {
+      trails.blue = Number(r.blue)
     }
     if (r.red && Number.isFinite(Number(r.red)) && Number(r.red) >= 0) {
       trails.red = Number(r.red)
@@ -89,7 +92,7 @@ const tsHeader = `export type Resort = {
   price: number;
   info: string;
   ticket_url: string;
-  trails?: { green?: number; red?: number; black?: number };
+  trails?: { green?: number; blue?: number; red?: number; black?: number };
 };
 export const RESORTS: Resort[] = `
 mkdirSync(dirname(TS_OUT), { recursive: true })

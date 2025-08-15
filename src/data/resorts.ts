@@ -8,7 +8,7 @@ export type Resort = {
   price: number
   info: string
   ticket_url: string
-  trails?: { green?: number; red?: number; black?: number }
+  trails?: { green?: number; blue?: number; red?: number; black?: number }
 }
 
 export const RESORTS: Resort[] = [
@@ -22,7 +22,7 @@ export const RESORTS: Resort[] = [
     price: 46,
     info: 'Powder heaven in Hokkaido.',
     ticket_url: 'https://www.grand-hirafu.jp/en/',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ export const RESORTS: Resort[] = [
     price: 55,
     info: 'Nagano Olympic venue.',
     ticket_url: 'https://www.happo-one.jp/en/',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ export const RESORTS: Resort[] = [
     price: 87,
     info: 'Extreme terrain by Mont Blanc.',
     ticket_url: 'https://en.chamonix.com/activities/winter/skiing',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
   {
     id: 4,
@@ -58,19 +58,19 @@ export const RESORTS: Resort[] = [
     price: 88,
     info: 'Largest linked ski area.',
     ticket_url: 'https://courchevel.com/en/',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
   {
     id: 5,
     country: 'Switzerland',
-    name: 'Zermatt (Matterhorn)',
+    name: 'Zermatt Ski Resort',
     lat: 45.98444356,
     lng: 7.6585903,
     difficulty: 'Intermediate',
     price: 110,
     info: 'Year-round glacier skiing.',
     ticket_url: 'https://www.matterhornparadise.ch/en/',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
   {
     id: 6,
@@ -82,7 +82,7 @@ export const RESORTS: Resort[] = [
     price: 91,
     info: 'Birthplace of modern skiing.',
     ticket_url: 'https://www.skiarlberg.at/en',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
   {
     id: 7,
@@ -94,7 +94,7 @@ export const RESORTS: Resort[] = [
     price: 142,
     info: 'Colossal Colorado resort.',
     ticket_url: 'https://www.vail.com/',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
   {
     id: 8,
@@ -106,7 +106,7 @@ export const RESORTS: Resort[] = [
     price: 110,
     info: 'Steep & deep legend.',
     ticket_url: 'https://www.jacksonhole.com/',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
   {
     id: 9,
@@ -118,7 +118,7 @@ export const RESORTS: Resort[] = [
     price: 112,
     info: 'Largest in North America.',
     ticket_url: 'https://www.whistlerblackcomb.com/',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
   {
     id: 10,
@@ -130,7 +130,7 @@ export const RESORTS: Resort[] = [
     price: 97,
     info: 'High-quality groomers near Beijing.',
     ticket_url: 'https://chonglihuaxue.cn/',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
   {
     id: 11,
@@ -142,7 +142,7 @@ export const RESORTS: Resort[] = [
     price: 73,
     info: 'Dolomites queen.',
     ticket_url: 'https://www.dolomitisuperski.com/en/',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
   {
     id: 12,
@@ -154,7 +154,7 @@ export const RESORTS: Resort[] = [
     price: 68,
     info: 'Family-friendly Pyrenees.',
     ticket_url: 'https://www.grandvalira.com/',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
   {
     id: 13,
@@ -166,7 +166,7 @@ export const RESORTS: Resort[] = [
     price: 179,
     info: 'Popular family-friendly resort with great terrain parks.',
     ticket_url: 'https://cardrona-treblecone.com',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
   {
     id: 14,
@@ -178,7 +178,7 @@ export const RESORTS: Resort[] = [
     price: 68,
     info: 'Legendary South American resort with stunning Andean views.',
     ticket_url: 'https://skiportillo.com/',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
   {
     id: 15,
@@ -190,7 +190,7 @@ export const RESORTS: Resort[] = [
     price: 74,
     info: 'Largest ski resort in Scandinavia with vibrant village life.',
     ticket_url: 'https://www.skistar.com/en/are/',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
   {
     id: 16,
@@ -202,7 +202,7 @@ export const RESORTS: Resort[] = [
     price: 112,
     info: 'Top Spanish Pyrenees resort with excellent snow record.',
     ticket_url: 'https://www.baqueira.es/',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
   {
     id: 17,
@@ -214,7 +214,7 @@ export const RESORTS: Resort[] = [
     price: 70,
     info: "Norway's largest ski area, perfect for families and beginners.",
     ticket_url: 'https://www.skistar.com/en/trysil/',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
   {
     id: 18,
@@ -226,7 +226,7 @@ export const RESORTS: Resort[] = [
     price: 89,
     info: 'Host of Winter Olympics events, well-groomed slopes.',
     ticket_url: 'https://www.yongpyong.co.kr/eng/skiNboard/',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
   {
     id: 19,
@@ -238,7 +238,7 @@ export const RESORTS: Resort[] = [
     price: 165,
     info: 'Largest ski resort in the Southern Hemisphere.',
     ticket_url: 'https://www.perisher.com.au',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
   {
     id: 20,
@@ -250,6 +250,42 @@ export const RESORTS: Resort[] = [
     price: 70,
     info: 'Sochi 2014 Olympic venue with modern lifts and facilities.',
     ticket_url: 'https://www.rosaski.com/',
-    trails: { green: 0, red: 0, black: 0 },
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
+  },
+  {
+    id: 21,
+    country: 'Japan',
+    name: 'Niseko Hanazono Resort',
+    lat: 42.89324687521404,
+    lng: 140.70016056824073,
+    difficulty: 'Beginner',
+    price: 46,
+    info: "Renowned for its deep powder snow, wide-open bowls, and family-friendly terrain parks in Hokkaido's Niseko area. ",
+    ticket_url: 'https://hanazononiseko.com/en/',
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
+  },
+  {
+    id: 22,
+    country: 'Japan',
+    name: 'Niseko Annupuri International Ski Area',
+    lat: 42.85049207969793,
+    lng: 140.64812225773528,
+    difficulty: 'Intermediate',
+    price: 48,
+    info: 'A compact ski area in Niseko offering mellow slopes for beginners, groomed runs for intermediates, and access to backcountry powder skiing.',
+    ticket_url: 'https://annupuri.info/',
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
+  },
+  {
+    id: 23,
+    country: 'Japan',
+    name: 'Niseko Village Ski Resort',
+    lat: 42.84712725225536,
+    lng: 140.6842798654517,
+    difficulty: 'Advanced',
+    price: 48,
+    info: 'Nestled in the heart of Niseko United, offering a mix of steep groomed runs, powder skiing, and luxury accommodations at the base.',
+    ticket_url: 'https://www.niseko-village.com/en',
+    trails: { green: 0, blue: 0, red: 0, black: 0 },
   },
 ]
