@@ -8,7 +8,8 @@
     "difficulty": "Advanced",
     "price": 46,
     "info": "Powder heaven in Hokkaido.",
-    "ticket_url": "https://www.grand-hirafu.jp/en/"
+    "ticket_url": "https://www.grand-hirafu.jp/en/",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "difficulty": "Advanced",
     "price": 55,
     "info": "Nagano Olympic venue.",
-    "ticket_url": "https://www.happo-one.jp/en/"
+    "ticket_url": "https://www.happo-one.jp/en/",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "difficulty": "Advanced",
     "price": 87,
     "info": "Extreme terrain by Mont Blanc.",
-    "ticket_url": "https://en.chamonix.com/activities/winter/skiing"
+    "ticket_url": "https://en.chamonix.com/activities/winter/skiing",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "difficulty": "Intermediate",
     "price": 88,
     "info": "Largest linked ski area.",
-    "ticket_url": "https://courchevel.com/en/"
+    "ticket_url": "https://courchevel.com/en/",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   },
   {
     "id": 5,
@@ -52,7 +56,8 @@
     "difficulty": "Intermediate",
     "price": 110,
     "info": "Year-round glacier skiing.",
-    "ticket_url": "https://www.matterhornparadise.ch/en/"
+    "ticket_url": "https://www.matterhornparadise.ch/en/",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   },
   {
     "id": 6,
@@ -63,7 +68,8 @@
     "difficulty": "Advanced",
     "price": 91,
     "info": "Birthplace of modern skiing.",
-    "ticket_url": "https://www.skiarlberg.at/en"
+    "ticket_url": "https://www.skiarlberg.at/en",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   },
   {
     "id": 7,
@@ -74,7 +80,8 @@
     "difficulty": "Intermediate",
     "price": 142,
     "info": "Colossal Colorado resort.",
-    "ticket_url": "https://www.vail.com/"
+    "ticket_url": "https://www.vail.com/",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   },
   {
     "id": 8,
@@ -85,7 +92,8 @@
     "difficulty": "Advanced",
     "price": 110,
     "info": "Steep & deep legend.",
-    "ticket_url": "https://www.jacksonhole.com/"
+    "ticket_url": "https://www.jacksonhole.com/",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   },
   {
     "id": 9,
@@ -96,7 +104,8 @@
     "difficulty": "Intermediate",
     "price": 112,
     "info": "Largest in North America.",
-    "ticket_url": "https://www.whistlerblackcomb.com/"
+    "ticket_url": "https://www.whistlerblackcomb.com/",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   },
   {
     "id": 10,
@@ -107,7 +116,8 @@
     "difficulty": "Intermediate",
     "price": 97,
     "info": "High-quality groomers near Beijing.",
-    "ticket_url": "https://chonglihuaxue.cn/"
+    "ticket_url": "https://chonglihuaxue.cn/",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   },
   {
     "id": 11,
@@ -118,7 +128,8 @@
     "difficulty": "Intermediate",
     "price": 73,
     "info": "Dolomites queen.",
-    "ticket_url": "https://www.dolomitisuperski.com/en/"
+    "ticket_url": "https://www.dolomitisuperski.com/en/",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   },
   {
     "id": 12,
@@ -129,7 +140,8 @@
     "difficulty": "Beginner",
     "price": 68,
     "info": "Family-friendly Pyrenees.",
-    "ticket_url": "https://www.grandvalira.com/"
+    "ticket_url": "https://www.grandvalira.com/",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   },
   {
     "id": 13,
@@ -140,7 +152,8 @@
     "difficulty": "Intermediate",
     "price": 179,
     "info": "Popular family-friendly resort with great terrain parks.",
-    "ticket_url": "https://cardrona-treblecone.com"
+    "ticket_url": "https://cardrona-treblecone.com",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   },
   {
     "id": 14,
@@ -151,7 +164,8 @@
     "difficulty": "Advanced",
     "price": 68,
     "info": "Legendary South American resort with stunning Andean views.",
-    "ticket_url": "https://skiportillo.com/"
+    "ticket_url": "https://skiportillo.com/",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   },
   {
     "id": 15,
@@ -162,7 +176,8 @@
     "difficulty": "Intermediate",
     "price": 74,
     "info": "Largest ski resort in Scandinavia with vibrant village life.",
-    "ticket_url": "https://www.skistar.com/en/are/"
+    "ticket_url": "https://www.skistar.com/en/are/",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   },
   {
     "id": 16,
@@ -173,7 +188,8 @@
     "difficulty": "Intermediate",
     "price": 112,
     "info": "Top Spanish Pyrenees resort with excellent snow record.",
-    "ticket_url": "https://www.baqueira.es/"
+    "ticket_url": "https://www.baqueira.es/",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   },
   {
     "id": 17,
@@ -184,7 +200,8 @@
     "difficulty": "Beginner",
     "price": 70,
     "info": "Norway's largest ski area, perfect for families and beginners.",
-    "ticket_url": "https://www.skistar.com/en/trysil/"
+    "ticket_url": "https://www.skistar.com/en/trysil/",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   },
   {
     "id": 18,
@@ -195,7 +212,8 @@
     "difficulty": "Intermediate",
     "price": 89,
     "info": "Host of Winter Olympics events, well-groomed slopes.",
-    "ticket_url": "https://www.yongpyong.co.kr/eng/skiNboard/"
+    "ticket_url": "https://www.yongpyong.co.kr/eng/skiNboard/",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   },
   {
     "id": 19,
@@ -206,7 +224,8 @@
     "difficulty": "Intermediate",
     "price": 165,
     "info": "Largest ski resort in the Southern Hemisphere.",
-    "ticket_url": "https://www.perisher.com.au"
+    "ticket_url": "https://www.perisher.com.au",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   },
   {
     "id": 20,
@@ -217,6 +236,7 @@
     "difficulty": "Advanced",
     "price": 70,
     "info": "Sochi 2014 Olympic venue with modern lifts and facilities.",
-    "ticket_url": "https://www.rosaski.com/"
+    "ticket_url": "https://www.rosaski.com/",
+    "trails": { "green": 0, "red": 0, "black": 0 }
   }
 ]

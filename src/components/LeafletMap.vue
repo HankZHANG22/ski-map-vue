@@ -55,10 +55,17 @@ function iconFor(diff: string) {
 function popupHTML(r: Resort) {
   const flag = props.flagMap?.[r.country] ? `${props.flagMap[r.country]} ${r.country}` : r.country
   const id = `w-${r.id}`
+  // Always display trails, even if all counts are 0
+  const trailsInfo =
+    r.trails && typeof r.trails === 'object'
+      ? `🟢 ${r.trails.green || 0} 🔴 ${r.trails.red || 0} ⚫ ${r.trails.black || 0}`
+      : '🟢 0 🔴 0 ⚫ 0'
+  const trailsHTML = `<div style="font-size:.9rem;color:#475569;margin-bottom:.25rem">${trailsInfo}</div>`
   return `
     <div style="min-width:240px">
       <div style="font-weight:700;margin-bottom:.25rem">${r.name}</div>
       <div style="font-size:.9rem;color:#475569;margin-bottom:.25rem">${flag} · ${r.difficulty} · $${r.price}</div>
+      ${trailsHTML}
       <div style="margin-bottom:.4rem;line-height:1.5">${r.info || ''}</div>
       <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.35rem 0 .5rem">
         <a class="btn primary" href="${r.ticket_url}" target="_blank" rel="noopener">🎟️ Tickets / Website</a>
@@ -115,7 +122,6 @@ function fitTo(data: Resort[]) {
   m.fitBounds(group.getBounds().pad(0.2))
 }
 
-/** ===== 把浮层改为 Leaflet 控件（不会卡位） ===== */
 function addLocateControl(m: L.Map) {
   const Locate = L.Control.extend({
     options: { position: 'bottomleft' as L.ControlPosition },
@@ -151,7 +157,6 @@ function addLegendControl(m: L.Map) {
   })
   m.addControl(new Legend())
 }
-/** ================================================= */
 
 onMounted(() => {
   const m = L.map('map', { worldCopyJump: true })
@@ -167,11 +172,11 @@ onMounted(() => {
     chunkedLoading: true,
     spiderfyOnMaxZoom: true,
     disableClusteringAtZoom: 12,
+    animate: false, // Disable clustering animations to prevent marker "running"
   })
   cluster.value = cl
   cl.addTo(m)
 
-  // ✅ 固定在地图边角的控件
   addLocateControl(m)
   addLegendControl(m)
 
@@ -214,7 +219,6 @@ onBeforeUnmount(() => {
   cluster.value = null
 })
 
-// ===== Weather =====
 function cacheKey(lat: number, lng: number) {
   return `owm_${lat.toFixed(3)}_${lng.toFixed(3)}`
 }
@@ -282,7 +286,6 @@ async function loadWeather(lat: number, lng: number, elId: string) {
   }
 }
 
-// Expose
 function focusResort(id: number) {
   const m = map.value
   const mk = markersById.get(id)
@@ -292,6 +295,7 @@ function focusResort(id: number) {
     addPulseToMarker(mk)
   }
 }
+
 function locate() {
   const m = map.value
   if (!(m instanceof L.Map) || !navigator.geolocation) {
@@ -318,6 +322,7 @@ function locate() {
     },
   )
 }
+
 function fitToCountry(country: string) {
   const m = map.value
   if (!m) return
@@ -326,6 +331,7 @@ function fitToCountry(country: string) {
   const group = L.featureGroup(items.map((r) => L.marker([r.lat, r.lng])))
   m.fitBounds(group.getBounds().pad(0.25))
 }
+
 function fitToAll() {
   const m = map.value
   if (m) m.setView(WORLD_VIEW.center, WORLD_VIEW.zoom)
@@ -394,10 +400,12 @@ defineExpose({ locate, focusResort, fitToCountry, fitToAll })
 /* 防止动画覆盖 Leaflet 定位 transform */
 .pin-root {
   will-change: transform;
+  position: absolute; /* Ensure Leaflet controls positioning */
 }
 .pin-wrap {
   display: grid;
   place-items: center;
+  position: relative; /* Isolate animations to inner img */
 }
 .pin-img {
   display: block;
@@ -423,7 +431,7 @@ defineExpose({ locate, focusResort, fitToCountry, fitToAll })
   transform-origin: center bottom;
 }
 
-/* 定位蓝色呼吸环（沿用你之前的动画关键帧） */
+/* 定位蓝色呼吸环 */
 @keyframes pulseRing {
   0% {
     stroke-width: 3;

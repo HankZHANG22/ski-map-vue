@@ -3,16 +3,12 @@ import { ref, reactive, computed, onMounted } from 'vue'
 import FiltersPanel from './components/FiltersPanel.vue'
 import LeafletMap from './components/LeafletMap.vue'
 import HowToUse from './components/HowToUse.vue'
-
-// 数据
 import { RESORTS, type Resort } from './data/resorts'
-// ✅ 根据你的实际文件选择其一：
-import { FLAG, withFlag } from './utils/flags' // ← 如果文件在 src/utils/flags.ts
+import { FLAG, withFlag } from './utils/flags'
 
-// 先用内置 demo，加载成功后替换为 /public/resorts.json
 const resorts = ref<Resort[]>(RESORTS)
+const filtered = ref<Resort[]>([])
 
-// 过滤状态
 const filters = reactive({
   country: '',
   difficulties: ['Beginner', 'Intermediate', 'Advanced'] as Array<Resort['difficulty']>,
@@ -21,12 +17,10 @@ const filters = reactive({
   keyword: '',
 })
 
-// 供 FiltersPanel 调用（避免 unknown 导致 TS 报错）
 function updateFilters(payload: Partial<typeof filters> & Record<string, unknown>) {
   Object.assign(filters, payload)
 }
 
-// 计算项
 const countries = computed(() =>
   [...new Set(resorts.value.map((r) => r.country))].sort((a, b) => a.localeCompare(b)),
 )
@@ -43,12 +37,12 @@ const filteredResorts = computed(() => {
   })
 })
 
-// 地图方法
 const mapRef = ref<InstanceType<typeof LeafletMap> | null>(null)
 function focusCountry(c: string) {
   filters.country = c
   mapRef.value?.fitToCountry?.(c)
 }
+
 function resetAll() {
   updateFilters({
     country: '',
@@ -59,14 +53,13 @@ function resetAll() {
   })
   mapRef.value?.fitToAll?.()
 }
+
 onMounted(() => {
   document.getElementById('btnReset')?.addEventListener('click', resetAll)
 })
 
-// 加载状态（合并你之前两段 onMounted，避免重复 fetch）
 const loading = ref(false)
 const loadError = ref<string | null>(null)
-
 onMounted(async () => {
   loading.value = true
   loadError.value = null
@@ -74,8 +67,6 @@ onMounted(async () => {
     const res = await fetch(`${import.meta.env.BASE_URL}resorts.json`, { cache: 'no-cache' })
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const data = (await res.json()) as Resort[]
-
-    // 校验
     const DIFF = new Set<Resort['difficulty']>(['Beginner', 'Intermediate', 'Advanced'])
     const cleaned: Resort[] = (Array.isArray(data) ? data : []).filter(
       (r) =>
@@ -87,20 +78,30 @@ onMounted(async () => {
         typeof r.lng === 'number' &&
         DIFF.has(r.difficulty) &&
         typeof r.price === 'number' &&
-        typeof r.ticket_url === 'string',
+        typeof r.ticket_url === 'string' &&
+        (!r.trails ||
+          (typeof r.trails === 'object' &&
+            (typeof r.trails.green === 'number' || r.trails.green === undefined) &&
+            (typeof r.trails.red === 'number' || r.trails.red === undefined) &&
+            (typeof r.trails.black === 'number' || r.trails.black === undefined))),
     )
-
     if (cleaned.length) {
-      resorts.value = cleaned
+      resorts.value = cleaned.map((r) => ({
+        ...r,
+        trails: r.trails || { green: 0, red: 0, black: 0 },
+      }))
+      filtered.value = resorts.value
       if (!cleaned.some((r) => r.country === filters.country)) filters.country = ''
     } else {
       loadError.value = 'resorts.json has no valid items. Using demo data.'
       console.warn('[resorts.json] No valid items, keep built-in demo.')
+      filtered.value = resorts.value
     }
   } catch (e) {
     const msg = (e as Error)?.message ?? String(e)
     loadError.value = `Failed to load resorts.json (${msg}) — using demo data`
     console.warn('[resorts.json] load failed, keep built-in demo:', e)
+    filtered.value = resorts.value
   } finally {
     loading.value = false
   }
@@ -117,19 +118,14 @@ onMounted(async () => {
         >Tip: click any marker to see tickets and live weather</small
       >
     </div>
-
-    <!-- 顶部国家 chips（含国旗） -->
     <div class="country-row">
       <button class="pill chip" v-for="c in countries" :key="c" @click="focusCountry(c)">
         {{ withFlag(c) }}
       </button>
     </div>
   </header>
-
   <main class="app">
-    <!-- 左侧面板 -->
     <aside class="side">
-      <!-- 加提示 -->
       <div
         v-if="loading || loadError"
         style="
@@ -144,7 +140,6 @@ onMounted(async () => {
         <template v-if="loading">⏳ Loading ski resort data...</template>
         <template v-else-if="loadError">⚠️ {{ loadError }}</template>
       </div>
-
       <filters-panel
         :countries="countries"
         :selected-country="filters.country"
@@ -157,13 +152,10 @@ onMounted(async () => {
       />
       <how-to-use />
     </aside>
-
-    <!-- 右侧整列地图 -->
     <section class="map-pane">
       <leaflet-map ref="mapRef" :resorts="resorts" :filtered="filteredResorts" :flag-map="FLAG" />
     </section>
   </main>
-
   <footer class="footer">Demo data for showcase. Weather by OpenWeatherMap.</footer>
 </template>
 
@@ -243,8 +235,6 @@ header {
   border-color: #bfdbfe;
   box-shadow: 0 0 0 2px #e0f2fe inset;
 }
-
-/* 两列布局：左侧固定 360px，右侧地图自适应并撑满高度 */
 .app {
   display: grid;
   grid-template-columns: 360px 1fr;
@@ -263,7 +253,6 @@ header {
     height: 70vh;
   }
 }
-
 .side {
   background: var(--panel);
   border-right: 1px solid var(--border);
@@ -317,13 +306,9 @@ select {
   background: linear-gradient(90deg, #e0f2fe, #eef2ff);
   border-color: #bfdbfe;
 }
-
-/* 右侧容器保持相对定位，让浮层可绝对定位 */
 .map-pane {
   position: relative;
 }
-
-/* 其他全局样式（与你之前一致） */
 .footer {
   padding: 0.75rem 1rem;
   color: var(--muted);
@@ -335,7 +320,6 @@ a {
   color: var(--blue-600);
   text-decoration: none;
 }
-
 .checkchip {
   position: relative;
   display: inline-flex;
@@ -357,7 +341,6 @@ a {
   border-color: #c7d2fe;
   box-shadow: 0 0 0 2px #e0e7ff inset;
 }
-
 .price-wrap {
   margin-top: 0.5rem;
 }
@@ -398,8 +381,6 @@ a {
 .price-col input[type='range'] {
   width: 100%;
 }
-
-/* 呼吸动画/聚合圈样式（保持不变） */
 @keyframes pulseRing {
   0% {
     stroke-width: 3;
@@ -417,7 +398,6 @@ a {
 .pulse-ring {
   animation: pulseRing 2s ease-in-out infinite;
 }
-
 @keyframes pinPulse {
   0% {
     transform: scale(1);
@@ -436,7 +416,6 @@ a {
   animation: pinPulse 1.8s ease-in-out infinite;
   transform-origin: center bottom;
 }
-
 .marker-cluster {
   background: radial-gradient(circle at 30% 30%, #e5effe 0%, #cfe3ff 55%, #a9cdfd 100%) !important;
   border: 2px solid #93c5fd !important;
@@ -477,8 +456,6 @@ a {
   width: 56px !important;
   height: 56px !important;
 }
-
-/* How-to */
 .howto {
   padding: 0.75rem;
   border: 1px solid var(--border);
