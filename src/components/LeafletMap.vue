@@ -58,8 +58,8 @@ function popupHTML(r: Resort) {
   // Always display trails, even if all counts are 0
   const trailsInfo =
     r.trails && typeof r.trails === 'object'
-      ? `🟢 ${r.trails.green || 0} 🔴 ${r.trails.red || 0} ⚫ ${r.trails.black || 0}`
-      : '🟢 0 🔴 0 ⚫ 0'
+      ? `🟢 ${r.trails.green || 0} 🔵 ${r.trails.blue || 0} 🔴 ${r.trails.red || 0} ⚫ ${r.trails.black || 0}`
+      : '🟢 0 🔵 0 🔴 0 ⚫ 0'
   const trailsHTML = `<div style="font-size:.9rem;color:#475569;margin-bottom:.25rem">${trailsInfo}</div>`
   return `
     <div style="min-width:240px">
@@ -172,7 +172,7 @@ onMounted(() => {
     chunkedLoading: true,
     spiderfyOnMaxZoom: true,
     disableClusteringAtZoom: 12,
-    animate: false, // Disable clustering animations to prevent marker "running"
+    animate: false,
   })
   cluster.value = cl
   cl.addTo(m)
@@ -400,12 +400,10 @@ defineExpose({ locate, focusResort, fitToCountry, fitToAll })
 /* 防止动画覆盖 Leaflet 定位 transform */
 .pin-root {
   will-change: transform;
-  position: absolute; /* Ensure Leaflet controls positioning */
 }
 .pin-wrap {
   display: grid;
   place-items: center;
-  position: relative; /* Isolate animations to inner img */
 }
 .pin-img {
   display: block;
@@ -431,7 +429,7 @@ defineExpose({ locate, focusResort, fitToCountry, fitToAll })
   transform-origin: center bottom;
 }
 
-/* 定位蓝色呼吸环 */
+/* 定位蓝色呼吸环（沿用你之前的动画关键帧） */
 @keyframes pulseRing {
   0% {
     stroke-width: 3;
